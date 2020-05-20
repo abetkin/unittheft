@@ -21,6 +21,16 @@ class FunctionTestCase(TestCase):
 
     def __init__(self, test_func):
         self.test_func = test_func
+        setattr(self, self._testMethodName, self.test_func)
+
+    def doCleanups(self):
+        pass
+
+    _testMethodDoc = None
+
+    @property
+    def _testMethodName(self):
+        return self.test_func.__name__
 
     def __str__(self):
         f = self.test_func

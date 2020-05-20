@@ -1,11 +1,19 @@
-from unittest import TestLoader as _TestLoader
+from unittest import TestLoader as _TestLoader, TestSuite
 from .case import FunctionTestCase
 
 class LoadTests:
 
+    def __init__(self, module_name):
+        self.module_name = module_name
+
+
     def __call__(self, _loader, suite, *args, **kw):
         loader = TestLoader()
-        # loader.loadTestsFromModule(test_ex, 'test')
+        tests = loader.loadTestsFromName(self.module_name)
+        return TestSuite(tests)
+
+
+load_from = LoadTests
 
 
 class TestLoader(_TestLoader):
