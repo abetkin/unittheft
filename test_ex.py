@@ -3,10 +3,7 @@ from unittheft.loader import LoadTests
 
 
 
-def test_smth(meta):
-    # with params:
-    #     for x in [1, 2]:
-    #
+def test_smth(x=param(range(3))):
     assertTrue(0)
 
 
