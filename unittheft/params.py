@@ -22,6 +22,7 @@ class Params:
 
 params = Params()
 
+@params
 def test():
     with params:
         x = 7
