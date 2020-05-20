@@ -1,3 +1,3 @@
 # unittheft
 
-`unittest` ~~bastardized~~ extended. 
+`unittest` modernized. 
