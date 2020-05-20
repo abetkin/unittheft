@@ -26,6 +26,6 @@ class FunctionTestCase(TestCase):
         f = self.test_func
         return f"{f.__module__}.{f.__name__}"
 
+
     def __repr__(self):
-        return "<%s tec=%s>" % (strclass(self.__class__),
-                                     self._testFunc)
+        return f'<FunctionTestCase: {self}'

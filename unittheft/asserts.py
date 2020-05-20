@@ -1,11 +1,7 @@
-import threading
 from functools import wraps
 
-from unittest import TestCase
+from unittheft.case import threadlocal, TestCase
 
-
-threadlocal = threading.local()
-threadlocal.case: TestCase
 
 @wraps(TestCase.assertTrue)
 def assertTrue(*args, **kw):
