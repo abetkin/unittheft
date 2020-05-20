@@ -13,8 +13,6 @@ class LoadTests:
         return TestSuite(tests)
 
 
-load_from = LoadTests
-
 
 class TestLoader(_TestLoader):
 
