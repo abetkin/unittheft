@@ -1,10 +1,6 @@
-from functools import wraps
-
-from unittheft.case import threadlocal, TestCase
+from .case import threadlocal
 
 
-@wraps(TestCase.assertTrue)
-def assertTrue(*args, **kw):
-    threadlocal.case.assertTrue(*args, **kw)
-
+def __getattr__(name):
+    return getattr(threadlocal.case, name)
 
